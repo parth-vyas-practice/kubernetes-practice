@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: example-svc-rule
+  namespace: example
+spec:
+  rules:
+  - host: <domain name to access example service ex. example.com>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: example-svc
+          servicePort: 80
